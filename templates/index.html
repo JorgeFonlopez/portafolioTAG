@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido al Portafolio de TAG SAS</h1>
+    <p>Explora nuestras categorías de productos:</p>
+    <ul>
+        {% for categoria in categorias %}
+            <li><a href="{{ url_for('producto_bp.categoria', categoria_id=categoria.id) }}">{{ categoria.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
